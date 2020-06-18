@@ -20,7 +20,7 @@ Open [http://localhost:8888](http://localhost:8888) to view it in the browser.
 
 ## API
 https://localhost:8888/.netlify/functions/orders    
-https://localhost:8888/.netlify/functions/customers
+https://localhost:8888/.netlify/functions/customers    
 https://localhost:8888/.netlify/functions/products
 
 ### `yarn test`
