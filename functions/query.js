@@ -4,7 +4,6 @@ const q = faunadb.query
 const client = new faunadb.Client({ secret: 'fnADuk94M0AGDH2jMwUywRTfJ7LaHkp8lbzxnzPG' })
 
 exports.handler = (event, context, callback) => {
-  const data = JSON.parse(event.body)
   return client.query(
     q.Map(
       q.Paginate(q.Documents(q.Collection('orders'))),
