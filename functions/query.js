@@ -10,9 +10,15 @@ exports.handler = (event, context, callback) => {
       q.Lambda("x", q.Get(q.Var("x")))
     ))
     .then((res) => {
-      console.log(res)
+      return callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(res)
+      })
     })
     .catch((err) => {
-      console.log(err)
+      return callback(null, {
+        statusCode: 400,
+        body: JSON.stringify(err)
+      })
     })
 }
