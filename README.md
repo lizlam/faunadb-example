@@ -1,4 +1,4 @@
-An Exploration of Fauna, FQL, and Netlify Functions
+## An Exploration of Fauna, FQL, and Netlify Functions
 
 Deployed to https://lizlam-faunadb-example.netlify.app/
 
@@ -19,7 +19,7 @@ Open [http://localhost:8888](http://localhost:8888) to view it in the browser.
 
 
 ## API
-https://localhost:8888/.netlify/functions/orders
+https://localhost:8888/.netlify/functions/orders    
 https://localhost:8888/.netlify/functions/customers
 https://localhost:8888/.netlify/functions/products
 

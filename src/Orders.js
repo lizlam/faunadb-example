@@ -8,8 +8,9 @@ const StyledDiv = styled.div`
   padding: 4px;
 `
 const Orders = () => {
-  const url = 'https://lizlam-faunadb-example.netlify.app/.netlify/functions/orders'
-  //const url = 'http://localhost:8888/.netlify/functions/orders'
+  const base = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_API : process.env.REACT_APP_PROD_API
+  const url = base + 'orders'
+
   const [info, setInfo] = useState()
 
   const fetchOrders = async () => {
