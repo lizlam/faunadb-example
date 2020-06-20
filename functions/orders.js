@@ -1,7 +1,9 @@
 const faunadb = require('faunadb')
 
 const q = faunadb.query
-const client = new faunadb.Client({ secret: process.env.REACT_APP_FAUNA_SECRET })
+const client = new faunadb.Client({
+  secret: 'fnADuk94M0AGDH2jMwUywRTfJ7LaHkp8lbzxnzPG'
+})
 
 exports.handler = (event, context, callback) => {
   return client.query(
