@@ -25,17 +25,15 @@ const Orders = () => {
   const url = base + 'orders'
   const [info, setInfo] = useState()
 
-  const fetchOrders = async () => {
-    const response = await fetch(url)
-    const data = await response.json()
-    setInfo(data)
-    console.log(data)
-    return data
-  }
-
   useEffect(() => {
+    const fetchOrders = async () => {
+      const response = await fetch(url)
+      const data = await response.json()
+      setInfo(data)
+      return data
+    }
     fetchOrders()
-  }, [])
+  }, [url])
 
   return (
     <div>
