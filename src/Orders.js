@@ -18,11 +18,7 @@ const StyledSpan = styled.span`
   font-weight: 700;
 `
 const Orders = () => {
-  const base = process.env.NODE_ENV === 'development'
-    ? process.env.REACT_APP_DEV_API
-    : process.env.REACT_APP_PROD_API
-
-  const url = base + 'orders'
+  const url = '/.netlify/functions/orders'
   const [info, setInfo] = useState()
 
   useEffect(() => {
