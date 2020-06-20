@@ -10,7 +10,6 @@ const StyledDiv = styled.div`
 const Orders = () => {
   const base = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_API : process.env.REACT_APP_PROD_API
   const url = base + 'orders'
-
   const [info, setInfo] = useState()
 
   const fetchOrders = async () => {
@@ -18,6 +17,7 @@ const Orders = () => {
     const data = await response.json()
     console.log(data)
     setInfo(data)
+
     return data
   }
 
@@ -28,12 +28,17 @@ const Orders = () => {
   return (
     <div>
       {info && info.data.map((v, i) => {
-        const { shipAddress, status } = v.data;
+        const { shipAddress, status } = v[0].data;
+        const { firstName, lastName } = v[1].data;
+        console.log(v[0].data);
+        console.log(v[1].data);
+        console.log(v[2].data);
         return (
           <StyledDiv key={i}>
             <h2>Order {i + 1}</h2>
             <div>Status: {status}</div>
-            <div>Customer Id: {v.data.customer["@ref"].id}</div>
+
+            <div>{`${firstName} ${lastName}`}</div>
             <div>{shipAddress.street}</div>
             <div>{shipAddress.city}, {shipAddress.state} {shipAddress.zip}</div>
           </StyledDiv>
