@@ -1,9 +1,10 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders h1 tag with Fauna', () => {
-  const { getByText } = render(<App />);
-  const element = getByText(/Fauna/i);
-  expect(element).toBeInTheDocument();
+describe('App', () => {
+  test('renders App component', () => {
+    render(<App />);
+    expect(screen.getByText(/Fauna, FQL and Netlify Functions/)).toBeInTheDocument();
+  });
 });
